@@ -1,0 +1,323 @@
+\documentclass[10pt]{jarticle}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\title{北海道大学 院試解答 2011年}
+\begin{document}
+\maketitle{}
+
+\section*{問1　計算機プログラミング}
+
+\subsection*{$\left[1\right]$}
+\begin{flushleft}
+(ア). p - 1  (イ). 2  (ウ). n \% i == 0  (エ). 1  (オ). 0\\
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+\begin{flushleft}
+(ア). pow(2, n)  (イ). n  (ウ). a \% 2 == 1  (エ). a /= 2\\
+\end{flushleft}
+
+\subsection*{$\left[3\right]$}
+\begin{flushleft}
+(1)\\  5  2  3  4    12  7  8  15 \\
+\end{flushleft}
+
+\begin{flushleft}
+(2)\\ 左 → 自 → 右　となるようにプログラムを書き換える \\
+$printf("\%d ", q -> value);$\ \ 自分を出力 \\
+$printnodes(q -> left);$\ \ 自分より左側のノードを出力 \\
+$printnodes(q -> right);$\ \ 自分より右側のノードを出力 \\
+の1番目と二番目を入れ替える\\
+\end{flushleft}
+
+\section*{問2　コンピュータ工学}
+\subsection*{$\left[1\right]$}
+\begin{flushleft}
+(ア). 制御　(イ). プログラム　(ウ). 命令　(エ). レジスタ　(オ). プログラムカウンタ\\
+(カ). デコーダ　(キ). ALU　(ク). 即値　(ケ). インデックス　(コ). アキュムレータ\\
+(サ).\\
+まずプログラムカウンタのさすアドレスを用いて主記憶から命令を命令レジスタに読み込む(命令フェッチ)。\\
+次に命令レジスタの命令語を解釈し、各処理ブロックに制御信号を送る(命令デコーダ)。\\
+その信号を受けて各処理ブロックは命令を実行する(実行)。\\
+最後に次に実行すべきアドレスを計算し、命令フェッチへと戻る(次アドレス生成)。　　　「158語」
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+\begin{flushleft}
+(1)\\　(A). e, g, h  (B). a, d, f  (C). b, j, l  (D). c, i, k\\
+\end{flushleft}
+
+\begin{flushleft}
+(2)\\
+プロセス管理 ： プロセスの生成、実行、消滅を管理する\\
+メモリ管理 ： プログラムの要求に応じて、メモリーの一部を割り当てたり不要となったメモリを開放する\\
+ファイル管理 ： ファイルのアクセス制御や、ファイルを価右脳するディレクトリの管理を行う\\
+入出力管理 ： \\
+コンピュータに接続された入出力装置をつ抽象化、標準化し、ユーザが使いやすいように制御する\\
+\end{flushleft}
+
+\section*{問3　情報数学}
+\subsection*{$\left[1\right]$}
+\begin{flushleft}
+(1)\\
+べき集合 ＝ 与えられた集合から、部分集合の全体として新たに作られた集合\\
+べき集合は、S の元の数が n のとき、べき集合の元の数は $2^n$個。よって\\
+\#B  = $2^{19}$\\
+\end{flushleft}
+
+\begin{flushleft}
+(2)\\
+ndiv(y) = 2 は 素数のことである。\\
+C は B のうち $\emptyset$ を抜いたもの。\\
+D は C のうち素数のみを使ったものの組み合わせ
+$\forall y \in x$ は x の要素のうちのすべての y \\
+素数は (2, 3, 5, 7, 11, 13, 17, 19) の 8 個。よって\\
+\#(D) = $2^8 - 1$\\
+\end{flushleft}
+
+\begin{flushleft}
+(3)\\
+D の要素のうち \#() が一番多いのは {2, 3, ~ , 19} の 8、 一番少ないのは $\emptyset$ はないので 1\\
+\#(Q) = 1 のときの Q は ${}_8\mathrm{C}_1$ 個ある。 P はそれぞれに対して7種類。\\
+Q = {2} のときは P は {2, 3}, {2, 5}, $\cdots$ の 7 種類。\#(Q) = 2 のとき、Q は ${}_8\mathrm{C}_2$ 個、P はそれぞれに対して 6 種類。\\
+これを繰り返していくと、ペアの総数は\\
+\[{}_8\mathrm{C}_1 \times 7 + {}_8\mathrm{C}_2 \times 6 + {}_8\mathrm{C}_3 \times 5 + {}_8\mathrm{C}_4 \times 4 + {}_8\mathrm{C}_5 \times 3 + {}_8\mathrm{C}_6 \times 2 + {}_8\mathrm{C}_7 \times 1
+\]
+\[
+= 1016
+\]
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+
+\begin{flushleft}
+(1)\\
+結合則とは、(A, B), C = A, (B, C) の時である。つまり、 M(M(A, B), C) = M(A, M(B, C)) を証明する。\\
+A, B, C がそれぞれ 0, 1 である時の結果をすべて書き、その結果から、
+M((A, B), C) = M(A, (B,C)) であることが証明される。\\
+\end{flushleft}
+
+\begin{flushleft}
+(2)\\ 
+分配法則とは A(B + C) = AB + AC であることである。\\
+M(A, N(B, C)) $\neq$ N(M(A, B), M(A, C)) であることを証明する。\\
+A = 0, B = 1, C = 0のとき\\
+M(A, N(B, C)) = M(0, 1) = 0\\
+N(0, 1) = 1\\
+となり、演算 M が演算 N に対して分配則を満たさない。\\
+\end{flushleft}
+
+\section*{問4　情報理論}
+\begin{flushleft}
+n : 送信する情報の長さ\\
+k : 意味のある情報の長さ\\
+n - l : 検査ビットの長さ。(送信時に、情報に誤りが生じているかどうかを検査するためのもの)\\
+H : 検査行列。$H^T$ が重要。$\vec{y}$ を受信情報とすると (長さ n) $\vec{s} = \vec{y}H^T$ となる。\\
+　　また、$\vec{s}$ をシンドロームという。(長さ n - k)\\
+$\vec{s}$のパターンから送受信された情報の誤りを検出、訂正できる。$\vec{s} = \vec{0}$ の時、正しく送受信されている。\\
+\subsection*{$\left[1\right]$}
+長さ n 、意味のある情報の数が k 個の情報について考える。$\vec{x} = (0, 0, \cdots , a_1, a_2, \cdots , a_{n - k})$ より、
+\[
+H^T = 
+\left[
+\begin{array}{c}
+P \\
+I
+\end{array}
+\right]
+\]
+この時、P は k 行 n - k列の行列、I は n - k 行 n - k 列の行列とする。\\
+$\vec{x}$ の先頭 k ビットが 0 なので、P は $\vec{s}$ に影響しない。\\
+よって、I が単位行列であることから、 $\vec{s} = (a_1, a_2, \cdots, a_{n_K})$\\
+\subsection*{$\left[[2\right]$}
+$\vec{x}, \vec{x'}$ が、共通の $\vec{s}$ $\to$ $\vec{x} + \vec{x'} = \vec{z}$ の証明\\
+共通の$\vec{s}$ なので、
+\[
+\vec{x}H^T = \vec{x'}H^T \to (\vec{x} - \vec{x'})H^T = 0
+\]
+$\vec{x}$ は、二元符号なので、$\vec{x} - \vec{x'} = \vec{x} + \vec{x'}$\\
+よって、$(\vec{x} + \vec{x'})H^T = \vec{0}$ となる。\\
+シンドロームが$\vec{0}$ なので、$\vec{x} + \vec{x'}$ は H に対する、不等号である。(逆の証明はこの逆をする)\\
+$\vec{s} = 0$となる、すべてのベクトルが、H の符号ごとは書いていないので、この証明はかなり怪しい。\\
+\subsection*{$\left[3\right]$}
+単一誤り訂正可能であるとは、シンドローム$\vec{s}$ から、どのビットが誤りであるかを一意に定めることができるということである。\\
+すると、誤りがない場合も考えて、$\vec{s}$ には n + 1 以上のパターンが必要である。\\
+$\vec{s}$ は、長さが n - k なので、そのパターン数は $2^{n - k}$ 個である。\\
+よって、二元戦記絵符号が単一誤り訂正可能であるためには、
+\[
+2^{n - k} \geq n + 1 すなわち、 n \neq 2^{n - k} - 1
+\]
+の成立が必要である。\\
+\subsection*{$\left[4\right]$}
+$\vec{s} = \vec{x}H^T = (0, 1, 1)$である。これは、H の 1 列目と一致する。\\
+上記の証明 : 
+\[
+\vec{x} = \vec{z} + \vec{e} \to \vec{s} = (\vec{z} + \vec{e})H^T = \vec{z}H^T + \vec{e}H^T = \vec{e}H^T
+\]
+$\vec{e}$ はどれか 1 要素だけ 1 で、それ以外は 0 なので 1 である要素が第 n 要素であるとすると、\\
+$\vec{s} = \vec{e}H^T = H^T$ の n 行目、すなわち H の n 列目に一致する。\\
+このことから、$\vec{x}$ の第 1 要素に誤りが生じていることになる。\\
+よって、$\vec{z} = (1, 1, 1, 0, 0, 0, 0)$ である。\\
+\end{flushleft}
+
+\section*{問5　線形代数学}
+\subsection*{$\left[1\right]$}
+\begin{flushleft}
+固有値(a + b)の時、固有ベクトル $x_1 = c_1\left( 1, 1 \right)^T$\\
+固有値(a - b)の時、固有ベクトル $x_2 = c_2\left( 1, -1 \right)^T$\\
+\[
+\left|
+\begin{array}{cc}
+a - t & b\\
+b & a - t
+\end{array}
+\right|
+= (a - t)^2 - b^2 = (a - t + b)(a - t - b) = 0
+\]
+\[
+t = a + b, a - b
+\]
+あとは、それぞれの t の値を代入し
+\[
+\left(
+\begin{array}{cc}
+a - t & b\\
+b & a - t
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+x_1 \\
+x_2 
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+0 \\
+0
+\end{array}
+\right)
+\]
+の式を解いていく。
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+\begin{flushleft}
+(1)\\
+$
+An\vec{x} =
+\left(
+\begin{array}{cccc}
+a + (n - 1)b \\
+a + (n - 1)b \\
+\vdots \\
+a + (n = 1)b
+\end{array}
+\right)
+= \{ a + (n - 1)b\}\vec{x}
+$
+から、
+$
+\lambda = a + (n + 1)b
+$
+となる。
+\end{flushleft}
+
+\begin{flushleft}
+(2)\\
+オイラーの公式 \ 
+$
+e^{i\theta} = \cos\theta + i\sin\theta
+$
+\ \ 等比級数の和 \ 
+$
+S_n = 
+\frac{a(1 - r^n)}{1 - r}
+ (r \neq 1)
+$
+より、
+\[
+\sum^{n - 1}_{k = 1}exp(k\frac{2\pi Li}{n}) = \sum^{n - 1}_{k = 1}\{exp(\frac{2\pi Li}{n})\}^k
+\]
+この式は、初項$e^{\frac{2\pi Li}{n}}$、公比$e^{\frac{2\pi Li}{n}}$、項数 n - 1 の等比数列の和となる。\\
+よって
+\[
+S_{n - 1} = 
+\frac
+{ar^{n - 1} - 1}
+{r - 1}
+= 
+\frac
+{e^{2\pi Li} - e{\frac{2\pi Li}{n}}}
+{e^{\frac{2\pi Li}{n}} - 1}
+ = 
+\frac
+{\cos(2\pi L) + i\sin(2\pi L) - \cos(\frac{2\pi L}{n}) - i\sin(\frac{2\pi L}{n})}
+{\cos(\frac{2\pi L}{n}) + i\sin(\frac{2\pi L}{n}) - 1}
+\]
+ここで、$\cos(2\pi L) = 1$, $\sin(2\pi L) = 0$となるため、上記の式はー1となる。\\
+\end{flushleft}
+
+\begin{flushleft}
+(3)\\
+\[
+\left(
+\begin{array}{cccc}
+a & b & \cdots & b \\
+b & a & \cdots & b \\
+\vdots & & \ddots &\vdots \\
+b & b & \cdots & a
+\end{array}
+\right)
+\left(
+\begin{array}{cccc}
+1 \\
+e^{\frac{2\pi Li}{n}}\\
+\vdots \\
+e^{(n - 1)\frac{2\pi Li}{n}}
+\end{array}
+\right)
+\]
+
+\[
+=
+\left(
+\begin{array}{ccccc}
+b\sum^{n - 1}_{k = 1}exp(k\frac{2\pi Li}{n}) + a \\
+b + b\sum^{n - 1}_{k = 1}exp(k\frac{2\pi Li}{n}) - b \times exp(\frac{2\pi Li}{n}) + a \times exp(\frac{2\pi Li}{n}) \\
+b + b\sum^{n - 1}_{k = 1}exp(k\frac{2\pi Li}{n}) - b \times exp(2\frac{2\pi Li}{n}) + a \times exp(2\frac{2\pi Li}{n}) \\
+\vdots\\
+b + b\sum^{n - 1}_{k = 1}exp(k\frac{2\pi Li}{n}) - b \times exp((n - 1)\frac{2\pi Li}{n}) + a \times exp((n - 1)\frac{2\pi Li}{n})
+\end{array}
+\right)
+\]
+\[
+=
+\left(
+\begin{array}{cccc}
+a - b \\
+b - b + (a - b) \times exp(\frac{2\pi Li}{n})\\
+\vdots \\
+b - b + (a - b) \times exp((n - 1)\frac{2\pi Li}{n})\\
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cccc}
+a - b \\
+(a - b) e^{\frac{2\pi Li}{n}} \\
+\vdots \\
+(a - b) e^{\frac{2\pi Li}{n}}
+\end{array}
+\right)
+=
+(a - b)\vec{z_L}
+\]
+よって、全ての$z_L$は An の固有ベクトルであり、その固有値は a - b \\
+$\vec{x} \cdot \vec{z_L} = 1 + \sum^{n - 1}_{k = 1}exp(k\frac{2\pi Li}{n}) = 1 - 1 = 0$ から直交する。
+\end{flushleft}
+\end{document}

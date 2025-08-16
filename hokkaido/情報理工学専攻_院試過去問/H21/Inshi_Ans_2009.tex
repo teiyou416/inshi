@@ -1,0 +1,331 @@
+\documentclass[10pt]{jarticle}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\title{北海道大学 院試解答 2010年}
+\begin{document}
+\maketitle{}
+
+\section*{問1　計算機プログラミング}
+
+\subsection*{$\left[1\right]$}
+
+\begin{flushleft}
+(ア). 0  (イ). i $<$ x  (ウ). i \% i == 0  (エ). i $<$ 10000  (オ). i == sumd(i)\\
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+\begin{flushleft}
+test1-2.c を参照
+\end{flushleft}
+
+\subsection*{$\left[3\right]$}
+\begin{flushleft}
+(1)\\
+(struct LIST*)malloc(sizeof (struct LIST))\\
+　\\
+(2)\\
+$(イ).\ cell -> next -> value\  (ウ).\ old -> next \ (エ).\ free(old)\ |\ (return)$\\
+　\\
+(3)\\
+52\\
+52 18\\
+52 32 18\\
+52 32 18 91\\
+52 32 18 48 91\\
+52 22 32 18 48 91\\
+52 22 32 18 48 91 15\\
+52 22 32 18 48 15
+\end{flushleft}
+
+\section*{問2　コンピュータ工学}
+\subsection*{$\left[1\right]$}
+\begin{flushleft}
+(1)\\
+第3層 ： トランスポート層　　第4層 ： アプリケーション層\\
+　\\
+(2)\\
+1 : Ethernet, PPP\\
+2 : IP, ICMP, ARP, RARP\\
+3 : TCP, UDP\\
+4 : HTTP, FTP, DNS　　　　etc..\\
+　\\
+(3)\\
+HTTP : 80　　SSH : 22　　TELNET : 23　　SMTP : 25　　POP : 110　　etc..\\
+　\\
+(4)\\
+相ごとに役割が違うので、違う層のことを考えずにサービスを作ることができる。\\
+また、1つの層の上に様々なサービスを作ることができる。\\
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+\begin{flushleft}
+(ア). マルチコア  (イ). ボトルネック  (ウ). 低下  (エ). 少なく  (オ). 少なく  \\
+(カ). 低下  (キ). 長く  (ク). メニーコア  (ケ). スレッド  (コ). 少ない
+\end{flushleft}
+
+\section*{問3　情報数学}
+\subsection*{$\left[1\right]$}
+\begin{flushleft}
+A B $A\to B$ $\overline{A}$vB\\
+0 \ 0 　1 　　1\\
+1 \ 0 　0 　　0\\
+0 \ 1 　1 　　1\\
+1 \ 1 　1 　　1\\
+より成り立つ。\\
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+\begin{flushleft}
+NOT(A) $\to$ NOR(A, A)\\
+OR(A, B) $\to$ NOR(NOR(A, B), NOR(A, B))\\
+AND(A, B) $\to$ NOR(NOR(A, A), NOR(B, B))\\
+XOR(A, B) $\to$ NOR(NOR(A, B), NOR(NOR(A, A), NOR(B, B)))\\
+\end{flushleft}
+
+\subsection*{$\left[3\right]$}
+\begin{flushleft}
+(1)\\
+$\frac{n(n - 1)}{2}\ \cdots\ {}_n\mathrm{C}_2$\\
+　\\
+(2)\\
+$\sum\limits_{k=0}^{n-2}({}_{n - 2}\mathrm{C}_k \times k!)$
+\end{flushleft}
+
+\section*{問4　情報理論}
+\subsection*{$\left[1\right]$}
+\begin{flushleft}
+$
+-\frac{1}{2}\log_2\frac{1}{2} - \frac{1}{2}\log_2\frac{1}{2} = 1
+$\\
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+\begin{flushleft}
+$x_{t - 1} = -1$ と、$x_{t - 1} = 1$ の2つの場合の式を作り、それぞれで p を r で表す。\\
+$<x_{t - 1} の時>$
+$
+\sum_{x_t = \pm 1}X_tP(X_t|1) = 1 \times P(1|1) + (-1) \times =(-1|1) = 1 - P - P = r
+$ より、
+$
+P = \frac{1}{2}(1 - r)
+$\\
+　両者より、P と r の関係式が等しいので、$X_{t - 1}$ を入力、$X_t$ を出力、反転率を $P = \frac{1}{2}(1 - r)$とした、2元対称通信路で表せる。\\
+　2元対称通信路とは、送信者が1つのビット(0 or 1)を送信しようとし受信者が 1 つのビットを受け取るとするとき、正しく受信されるか、ある小さな確率でビット反転した値(対称)を受け取る通信路。\\
+　余談\\
+　$0 \leq r \leq 1$ より、$0 \leq P \leq \frac{1}{2}$ となる。つまり、$X_t = X_{t - 1}$ の確率が、 $X_t \neq X_{t - 1}$ の確率よりも、高井か同じ情報源である。\\
+　\\
+(3)\\
+L = 2 を例に説明\\
+$C(2) = <X_t X_{t - 2}> = \sum\limits_{X_t = \pm 1}\sum\limits_{X_{t - 1} = \pm 1}\sum\limits_{X_{t - 2} = \pm 1}X_t X_{t - 2} P(X_t, X_{t - 1}, X_{t - 2})$\\
+これを表で表すと、
+\[
+\begin{tabular}{|c|c|c|c|}
+\hline
+$X_t$ & $X_{t - 1}$ & $X_{t - 2}$ & $X_tX_{t - 2}P(X_t, X_{t - 1}, X_{t - 2})$\\ \hline
+1 & 1 & 1 & + \\ \hline
+1 & 1 & -1 & - \\ \hline
+1 & -1 & 1 & + \\ \hline
+1 & -1 & -1 & - \\ \hline
+-1 & 1 & 1 & - \\ \hline
+-1 & 1 & -1 & + \\ \hline
+-1 & -1 & 1 & - \\ \hline
+-1 & -1 & -1 & + \\ \hline
+\end{tabular}
+\]
+このことから、
+$
+C(2) = \{P(1, 1, 1) + P(1, -1, 1) + P(-1, 1, -1) + P(-1, -1, -1)\} - \{P(1, 1, -1) + P(1, -1, -1) + P(-1, 1, 1) + P(-1, -1, 1)\}
+$\\
+これは、同符号の確率から異符号の確率を引いたものである。\\
+つまり、$X_t と X_{t - L}$ の相関関数は、同符号の確率から、異符号の確率を引いたものであることがわかる。\\
+同符号の確率は、回数 L の間に偶数回ビット反転を行ったものであり、異符号の場合は、奇数回ビット反転したものである。\\
+偶数回ビット反転する確率 $P_+$ は、$P_+ = {}_L\mathrm{C}_0(1 - P)^L + {}_L\mathrm{C}_2(1 - P)^{L - 2}P^2 \cdots$\\
+奇数回ビット反転する確率 $P_-$ は、$P_- = {}_L\mathrm{C}_1(1 - P)^{L - 1}P + {}_L\mathrm{C}_3(1 - P)^{L - 3}P^3 \cdots$
+よって、
+\[
+C(L) = 
+\sum\limits_{X_t = \pm 1}\sum\limits_{X_{t - 1} = \pm 1} \cdots \sum\limits_{X_{t - L + 1} = \pm 1}\sum\limits_{X_{t - L} = \pm1} X_tX_{t - L}P(X_t, X_{t - 1}, \cdots , X_{t - L + 1}, X_{t - L})
+\]
+\[
+{}_L\mathrm{C}_0(1 - P)^L - {}_L\mathrm{C}_1(1 - P)^{L - 1}P + {}_L\mathrm{C}_2(1 - P)^{L - 2}P^2 - {}_L\mathrm{C}_3(1 - P)^{L - 3}P^3 \cdots
+\]
+\[
+{}_L\mathrm{C}_0(1 - P)^L + {}_L\mathrm{C}_1(1 - P)^{L - 1}(-P) + {}_L\mathrm{C}_2(1 - P)^{L - 2}(-P)^2 + {}_L\mathrm{C}_3(1 - P)^{L - 3}(-P)^3 \cdots
+\]
+\[
+= \{(1 - P) + (-P)\}^L = (1 - 2P)^L = r^L = e^{L\log{r}}
+\]
+$log{r} = -\frac{1}{L_0}$とすると、上記の式及び、それを満たす$L_0$ は、
+\[
+e^{L\log{r}} = e^{-\frac{L}{L_0}} また、 L_0 = -\frac{1}{\log{r}}
+\]
+\end{flushleft}
+
+\section*{問5　線形代数学}
+\subsection*{$\left[1\right]$}
+\begin{flushleft}
+(1)\\
+行列式 $|S_2| = a^2 - 1$\\
+固有値と固有ベクトル\\
+$|S_2 - Et| = (a - t)^2 - 1 = (a - t + 1)(a - t - 1) = 0$より、固有値 t = a + 1, a - 1。\\
+t = a + 1　のとき、固有ベクトルは\\
+$-x_1 - x_2 = 0$より、$\vec{x_1} = c_1\left(\begin{array}{cc}1 \\ -1\end{array}\right)\ \cdots (c_1 \neq 0)$\\
+t = a - 1 のとき、固有ベクトルは\\
+$x_1 - x_2 = 0$より、$\vec{x_1} = c_2\left(\begin{array}{cc}1 \\ 1\end{array}\right)\ \cdots (c_2 \neq 0)$\\
+となる。\\
+　\\
+(2)\\
+上記から、固有ベクトルがわかったので、対角化(n 行 n 列目のみ値を持ち、ほかは 0 の行列を作ること)を行う。\\
+固有ベクトルから、$P$を作成する。\\
+$P = 
+\left(
+\begin{array}{cc}
+x_1 
+\\ x_2
+\end{array}
+\right)
+= 
+\left(
+\begin{array}{cc}
+1 & 1 \\
+-1 & 1
+\end{array}
+\right)$\\
+$P^{-1} = 
+\frac{1}{2}
+\left(
+\begin{array}{cc}
+1 & -1 \\
+1 & 1
+\end{array}
+\right)$\\
+よって、対角行列は、
+$P^{-1}S_2P = \frac{1}{2}
+\left(
+\begin{array}{cc}
+1 & -1 \\
+1 & 1
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+a & -1 \\
+-1 & a 
+\end{array}
+\right)
+\left(
+\begin{array}{cc}
+1 & 1\\
+-1 & a
+\end{array}
+\right)
+ = 
+\left(
+\begin{array}{cc}
+a + 1 & 0\\
+0 & a - 1
+\end{array}
+\right)
+$
+となる。\\
+よって、$(P^{-1}S_2P)^n = P^{-1}(S_2)^nP = 
+\left(
+\begin{array}{cc}
+(a + 1)^n & 0 \\
+0 & (a - 1)^n
+\end{array}
+\right)
+= T_2
+$
+となるため、\\
+$(S_2)^n = PT_2P^{-1} = 
+\frac{1}{2}
+\left(
+\begin{array}{cc}
+(a + 1)^n + (a - 1)^n & -(a + 1)^n + (a - 1)^n \\
+-(a - 1)^n + (a - 1)^n & (a + 1)^n + (a - 1)^n
+\end{array}
+\right)
+$
+となる。
+\end{flushleft}
+
+\subsection*{$\left[2\right]$}
+\begin{flushleft}
+(1)\\
+\[
+s_m = 
+\left\{
+\begin{array}{l}
+a \cdots (m = 1) \\
+aS_{m - 1} + (m - 1)t_{m - 1} \cdots (m \leq 2)
+\end{array}
+\right.
+\]
+\[
+t_{m - 1} =
+\left\{
+\begin{array}{l}
+(a + 1) t_{m - 2} \cdots (m \leq 3) \\
+-1 \cdots (m = 2)
+\end{array}
+\right.
+\]
+
+$S_m$は、m = 4の時を考える。\\
+\[
+S_4 = 
+\left|
+\begin{array}{cccc}
+a & -1 & -1 & -1 \\
+-1 & a & -1 & -1 \\
+-1 & -1 & a & -1 \\
+-1 & -1 & -1 & a \\
+\end{array}
+\right|
+ = 
+a
+\left|
+\begin{array}{ccc}
+a & -1 & -1 \\
+-1 & a & -1 \\
+-1 & -1 & a
+\end{array}
+\right|
+ - 
+(-1)
+\left|
+\begin{array}{ccc}
+-1 & -1 & -1 \\
+-1 & a & -1 \\
+-1 & -1 & a
+\end{array}
+\right|
+\]
+\[
+ + 
+(-1)
+\left|
+\begin{array}{ccc}
+-1 & -1 & -1 \\
+a & -1 & -1 \\
+-1 & -1 & a
+\end{array}
+\right|
+ - 
+(-1)
+\left|
+\begin{array}{ccc}
+-1 & -1 & -1 \\
+a & -1 & -1 \\
+-1 & a & -1
+\end{array}
+\right|
+\]
+この中で、後ろ 3 つはすべて$t_3$となる。これを繰り返すことで導ける。\\
+
+\end{flushleft}
+\end{document}

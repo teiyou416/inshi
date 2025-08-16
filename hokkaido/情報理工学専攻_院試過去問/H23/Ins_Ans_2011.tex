@@ -1,0 +1,278 @@
+\documentclass[10pt]{jarticle}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\usepackage[dvipdfm]{graphicx}
+\title{複合情報学専攻2011年過去問模範解答}
+\begin{document}
+\section*{問1}
+\subsection*{$[1]$}
+$\textcircled{\scriptsize1}$ (a). 8 (b). 9 (c). 64  (d). 7 (e). 64
+
+$\textcircled{\scriptsize2}$ n == 0 ? 0 : (queen[n - 1] + 1)
+
+$\textcircled{\scriptsize3}$ sum = 0
+\subsection*{$[2]$}
+(ア). 　　(イ). (c) 　　(ウ). (a) 　　(エ). (d)
+
+\section*{問3}
+\subsection*{(1)}
+べき等性 … 複数回実行を繰り返しても値が変わらないもの。(例 : 絶対値、0, 1の乗数など)\\
+\subsection*{(2)}
+\subsubsection*{(ア)}
+ \begin{itemize}
+ \item 1桁 : 16
+ \item 2桁 : (十の位 : 0以外の数) $\times$ (一の位 : 十の位の数以外) = 15 $\times$ 15 = 225
+ \item 3桁 : (百の位 : 0以外の数) $\times$ (十の位 : 百の位以外の数) $\times$ (一の位 : 百、十以外の数) = 15 $\times$ 15 $\times$ 14 = 3150
+ \item 4桁 : (千の位 : 0以外の数) $\times$ (百の位 : 千の位以外の数) $\times$ (十の位 : 千、百の位以外の数) $\times$ (一の位 : 千、百、十以外の数) = 15 $\times$ 15 $\times$ 14 $\times$ 13 = 40950
+ \end{itemize}
+\subsubsection*{(イ)}
+\includegraphics{exp3_2_i.png}\\
+\subsubsection*{(ウ)}
+　この条件のもとでは、n 桁目の整数 1 つにつき 1 桁目と n 桁目を除いた2つの数字が作られることが分かる。\\
+　このなかで、2つ数字が作れないものが存在する。それは、$111 \cdots 1$ と、$10 \cdots $の数字である。\\
+　前者は、どちらの桁をとっても同じ数字になり、後者は n 桁目をとった数字は存在しないことが分かる。\\
+　このことから、($k \leq 3$)の条件下において、n 桁目で増える本数の数は、
+\[
+2^{k - 1}(n桁目における2進数で表すことのできる整数の数) + (2^{n - 2} - 1)
+\]
+\[
+(n桁目における11 \cdots であらわすことのできる整数から11 \cdots 1を引いたもの)
+\]
+　となる。よって、n での辺の増加本数は、
+\[
+\sum^{n}_{k = 3}{2^{k - 1} + (2^{k - 2} - 1) }
+\]
+とあらわすことができる。これらは、公比 2の等比数列の和であるので、
+\[
+\sum^n_{k = 3}2^{k - 1} = \sum^n_{k = 1}2^{k - 1} - \sum^2_{k = 1}2^{k - 1} = 2^n - 1 - 3 = 2^n - 4
+\]
+\[
+\sum^n_{k = 3}{2^{k - 2} - 1} = \sum^n_{k = 3}2^{k - 2} - \sum^n_{k = 3}k
+\]
+\[
+= \sum^n_{k = 2}{2^{k - 2}} - \sum^2_{k = 2}2^{k - 2} - n + 2 = 2^(n - 1) - 1 - 1 - n + 2 = 2^(n - 1) - n
+\]
+より、n 桁目における辺の総和は、
+\[
+2^n + 2^{n - 1} - n - 4 + (2 + 3)( 1 桁目と 2 桁目の本数) = 2^n + 2^{n - 1} - n + 1
+\]
+となる。
+\\
+\section*{問4}
+\subsection*{(i)}
+エントロピー関数の求め方 : $-おこる確率 \times log{おこる確率}$より、(logの底数はなんでも良いが、2 が一般的。今回のグラフは、底数を2とする)\\
+この条件下では、$-p\log_2{p} - (1 - p)log_2{1 - p}$となる。よって、\\
+\includegraphics{exp4_i.png}\\
+\subsection*{(ii)}
+
+%問5
+\section*{問5}
+\subsection*{(i)}
+\[
+A = 
+\left[
+\begin{array}{ccc}
+1 & 2 & 0 \\
+2 & 1 & -1 \\
+0 & -1 & 0
+\end{array}
+\right]
+\]
+
+\subsection*{(ii)}
+\[
+|A - tE| = 
+\left|
+\begin{array}{ccc}
+1 - t & 2 & 0 \\
+2 & 1 - t & -1 \\
+0 & -1 & 1 - t \\
+\end{array}
+\right|
+\]
+\[
+ = 
+(1 - t)\{(1 - t)^2 - 3\} + 0 = (1 - t)(t^2 - 2t - 2)
+\]
+より、t = -1, $1 \pm \sqrt{5}$となる。\\
+t = 1 のとき、[A - E][x] = 0 を求める。\\
+\[
+\left[
+\begin{array}{ccc}
+0 & 2 & 0 \\
+2 & 0 & -1 \\
+0 & -1 & 0 \\
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3 \\
+\end{array}
+\right]
+ = 
+\left[
+\begin{array}{c}
+0 \\
+0 \\
+0 \\
+\end{array}
+\right]
+\]
+上記の式から、
+\[
+x_3 = 2x_1, x_2 = 0 より 固有ベクトルは、
+\left[
+\begin{array}{c}
+1 \\
+0 \\
+2
+\end{array}
+\right]
+となる。大きさが 1 であるので、\sqrt{1 + 2^2} で割る。
+\]
+t = $1 \pm \sqrt{5}$ のとき、
+\[
+\left[
+\begin{array}{ccc}
+\pm \sqrt{5} & 2 & 0 \\
+2 & \pm \sqrt{5} & -1 \\
+0 & -1 & \pm \sqrt{5}\\
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3 \\
+\end{array}
+\right]
+ = 
+\left[
+\begin{array}{c}
+0 \\
+0 \\
+0 \\
+\end{array}
+\right]
+\]
+上記の式を解くと、
+\[
+t = 1 - \sqrt{5} のとき、
+\left[
+\begin{array}{c}
+-2 \\
+\sqrt{5} \\
+1
+\end{array}
+\right]
+, 
+t = 1 + \sqrt{5} のとき、
+\left[
+\begin{array}{c}
+-2 \\
+-\sqrt{5} \\
+1
+\end{array}
+\right]
+\]
+となる。どちらも、大きさを 1 にするため、$\sqrt{(-2)^2 + \sqrt{\pm 5}^2 + (1)^2}$ で割る。\\
+これは、どの固有ベクトル同士を掛け合わせても 0 になるため、直交していることが分かる。\\
+
+\subsection*{(iii)}
+条件の式に従って式変形をしていく。
+\[
+\frac{d}{dt}r = Ar \to \frac{d}{dt}Vu = AVu \to \frac{d}{dt}u = V^{-1}AVu = Pu
+\]
+よって、$V^{-1}AV = P$ となる行列 V, P を求めればよいことが分かる。\\
+(ii)から、固有ベクトルを求めているので、それを使い A を対角化すればよい。よって、
+\[
+V = 
+\left[
+\begin{array}{ccc}
+1 & -2 & -2 \\
+0 & \sqrt{5} & -\sqrt{5} \\
+2 & 1 & 1
+\end{array}
+\right]
+, V^{-1} = \frac{1}{10}
+\left[
+\begin{array}{ccc}
+2 & 0 & 4 \\
+-2 & \sqrt{5} & 1 \\
+-2 & -\sqrt{5} & 1\\
+\end{array}
+\right]
+\]
+となる。これによって $P = V^{-1}AV$ より、
+\[
+P = V^{-1}AV = 
+\left[
+\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 + \sqrt{5} & 0 \\
+0 & 0 & 1 - \sqrt{5}\\
+\end{array}
+\right]
+\]
+となる。
+
+\subsection*{(iv)}
+(iii)から$\frac{d}{dt}{\bf{u}} = {\bf{P}}{\bf{u}}$であることがわかった. このことから,
+\begin{eqnarray}
+	\frac{d}{dt}u_1 &=& u_1\\
+	\frac{d}{dt}u_2 &=& 1 + \sqrt{5}u_2\\
+	\frac{d}{dt}u_3 &=& 1 - \sqrt{5}u_3
+\end{eqnarray}
+であることがわかる. この微分方程式を解くことによって,
+\begin{eqnarray}
+	u_1 = C_1e^t, u_2 = C_2e^{(1 + \sqrt{5})t}, C_3e^{(1 - \sqrt{5})t} (C_1, C_2, C_3は零ではない実数)
+\end{eqnarray}
+であることがわかる. 
+
+ここで, (iii)より${\bf{r}} = {\bf{Vu}}$より, 
+\begin{eqnarray}
+	{{\bf}r} = {\bf{Vu}} &=& 
+	\left[
+		\begin{array}{ccc}
+			1 & -2 & -2 \\
+			0 & \sqrt{5} & -\sqrt{5} \\
+			2 & 1 & 1 \\
+		\end{array}
+	\right]
+	\cdot
+	\left[
+		\begin{array}{c}
+			C_1e^t \\
+			C_2e^{(1 + \sqrt{5})t} \\
+			C_3e^{(1 - \sqrt{5})t} \\
+		\end{array}
+	\right]\\
+	&=&
+	\left[
+		\begin{array}{c}
+			C_1e^t - 2C_2e^{(1 + \sqrt{5})t} - 2C_3e^{(1 - \sqrt{5})t} \\
+			\sqrt{5}C_2e^{(1 + \sqrt{5})t} - \sqrt{5}C_3e^{(1 - \sqrt{5})t} \\
+			2C_1e^t + C_2e^{(1 + \sqrt{5})t} + C_3e^{(1 - \sqrt{5})t}\\
+		\end{array}
+	\right]
+\end{eqnarray}
+となる. このことから, 
+\begin{eqnarray}
+	x &=& C_1e^t - 2C_2e^{(1 + \sqrt{5})t} - 2C_3e^{(1 - \sqrt{5})t} \\
+	y &=& \sqrt{5}C_2e^{(1 + \sqrt{5})t} - \sqrt{5}C_3e^{(1 - \sqrt{5})t} \\
+	z &=& 2C_1e^t + C_2e^{(1 + \sqrt{5})t} + C_3e^{(1 - \sqrt{5})t}
+\end{eqnarray}
+となる. あとは初期条件を(7)から(9)に代入することで$C_1, C_2, C_3$を求める. 
+計算を行うと$C_1 = 0, C_2 = \frac{1}{2\sqrt{5}}, C_3 = -\frac{1}{2\sqrt{5}}$となり, x, y, z はそれぞれ, 
+\begin{eqnarray}
+	x &=& -\frac{1}{\sqrt{5}}e^{(1 + \sqrt{5})t} + \frac{1}{\sqrt{5}}e^{(1 - \sqrt{5})t} \\
+	y &=& \frac{1}{2}e^{(1 + \sqrt{5})t} + \frac{1}{2}e^{(1 - \sqrt{5})t} \\
+	z &=& \frac{1}{2\sqrt{5}}e^{(1 + \sqrt{5})t} - \frac{1}{2\sqrt{5}}e^{(1 - \sqrt{5})t}
+\end{eqnarray}
+となる.
+\end{document}
